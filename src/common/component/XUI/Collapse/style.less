@@ -1,0 +1,38 @@
+.XUI-Collapse {
+  &.ant-collapse {
+    border: none;
+    border-radius: 0;
+
+    .ant-collapse-item > {
+      border-radius: 0;
+      border: none;
+    }
+
+    .ant-collapse-item > .ant-collapse-header {
+      padding: 2px 8px;
+      font-weight: bolder;
+      user-select: none;
+    }
+
+    .ant-collapse-item .ant-collapse-header-collapsible-only .ant-collapse-header-text {
+      flex: 1;
+      width: 1px;
+    }
+
+    .ant-collapse-content {
+      border: none;
+    }
+
+    .ant-collapse-content > .ant-collapse-content-box {
+      padding: 8px 8px 12px 8px;
+    }
+
+    .ant-collapse-item > .ant-collapse-content {
+      border-radius: 0;
+    }
+
+    > .ant-collapse-item > .ant-collapse-header .ant-collapse-expand-icon {
+      padding-inline-end: 8px;
+    }
+  }
+}

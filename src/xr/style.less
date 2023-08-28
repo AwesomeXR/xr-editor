@@ -1,0 +1,49 @@
+.XREditor {
+  .hideScrollbar,
+  .ant-card-body {
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .xr-text-code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  }
+
+  .transparent-board {
+    background: linear-gradient(45deg, #ddd 25%, transparent 25%), linear-gradient(-45deg, #ddd 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #ddd 75%), linear-gradient(-45deg, transparent 75%, #ddd 75%), #aaa;
+    background-size: 20px 20px;
+    background-position:
+      0 0,
+      0 10px,
+      10px -10px,
+      -10px 0px;
+  }
+
+  .ant-table-wrapper.hideHeader {
+    .ant-table-thead {
+      display: none;
+    }
+    .ant-table-tbody > tr:first-of-type > td {
+      border-top: 1px solid #4d4d4d;
+    }
+  }
+
+  // fix bjs debugger gui
+  #actionTabs {
+    input,
+    select {
+      color: #000;
+    }
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+
+.sketch-picker {
+  color: #333;
+}

@@ -1,0 +1,108 @@
+.BizMenu {
+  z-index: 99999;
+
+  &-list {
+    padding: 4px;
+    border-radius: 4px;
+    background: @colorBgElevated;
+    box-sizing: border-box;
+    border: 1px solid @colorBorder;
+  }
+
+  &-item {
+    position: relative;
+    height: 24px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+
+    &-content {
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      color: @colorText;
+
+      > .icon {
+        width: 24px;
+        height: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      > .text {
+        flex: 1;
+        box-sizing: border-box;
+        width: 1px;
+        font-size: 14px;
+        line-height: 16px;
+      }
+
+      > .hotkey {
+        margin-left: 8px;
+        font-size: 12px;
+        font-family: monospace;
+      }
+
+      > .children-arrow {
+        margin-left: 8px;
+        font-size: 12px;
+        opacity: 0;
+      }
+    }
+
+    &.has-children {
+      > .BizMenu-item-content {
+        > .children-arrow {
+          opacity: 1;
+        }
+      }
+    }
+
+    > .BizMenu-list {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      left: calc(100% - 2px);
+      top: 0;
+    }
+
+    &:hover,
+    &.active {
+      background: @colorPrimary;
+
+      > .BizMenu-item-content {
+        color: @colorText;
+      }
+
+      > .BizMenu-list {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+
+      > .BizMenu-item-content {
+        color: @colorTextQuaternary;
+      }
+
+      &:hover,
+      &.active {
+        background: @colorBgElevated;
+
+        > .BizMenu-item-content {
+          color: @colorTextQuaternary;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

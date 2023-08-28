@@ -1,0 +1,32 @@
+.CanvasViewer {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #666;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: @colorPrimary;
+    border-radius: 99px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: @colorPrimaryHover;
+  }
+
+  &.viewport-fixed-ratio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-Host {
+  }
+}

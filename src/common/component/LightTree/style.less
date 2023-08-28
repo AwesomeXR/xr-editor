@@ -1,0 +1,161 @@
+.LightTree {
+  > .ant-empty {
+    margin: 0; // 避免 margin 溢出
+    padding: 32px 0;
+  }
+
+  &-LightTreeNode-inner {
+    padding: 0 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &-LightTreeNode {
+    position: relative;
+    box-sizing: border-box;
+    color: @colorText;
+
+    cursor: pointer;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+
+      font-style: normal;
+
+      > img {
+        height: 14px;
+        width: 14px;
+        display: block;
+      }
+    }
+
+    &-content {
+      margin-left: 4px;
+      width: 1px;
+      flex: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      user-select: none;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    &-subContent {
+      max-width: 120px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      user-select: none;
+      font-size: 12px;
+      line-height: 24px;
+      color: @colorTextSecondary;
+    }
+
+    &-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+
+      > .LightTree-LightTreeNode-icon {
+        display: none;
+
+        &.stable {
+          display: flex;
+        }
+      }
+    }
+
+    &:hover {
+      background: @colorPrimaryBgHover;
+    }
+
+    &.mute {
+      > .LightTree-LightTreeNode-inner {
+        color: @colorTextQuaternary;
+
+        > .LightTree-LightTreeNode-subContent {
+          color: @colorTextQuaternary;
+        }
+      }
+    }
+
+    &.tempSelect {
+      background: @colorPrimaryBgHover;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 1px solid @colorPrimary;
+        box-sizing: border-box;
+      }
+    }
+
+    &.select {
+      background: @colorPrimary;
+      > .LightTree-LightTreeNode-inner {
+        color: #fff;
+
+        > .LightTree-LightTreeNode-subContent {
+          color: #fff;
+        }
+      }
+    }
+
+    &.select:hover {
+      .LightTree-LightTreeNode-action > .LightTree-LightTreeNode-icon {
+        display: flex;
+      }
+    }
+
+    &.disabled {
+      > .LightTree-LightTreeNode-inner {
+        cursor: not-allowed;
+        > *:not(.collapse-icon) {
+          pointer-events: none;
+          color: @colorTextQuaternary;
+        }
+      }
+    }
+
+    &.editing {
+      > .LightTree-LightTreeNode-inner {
+        > .LightTree-LightTreeNode-content {
+          user-select: auto;
+
+          > input {
+            height: 24px;
+            line-height: 24px;
+            outline: none;
+            width: 100%;
+            border: 1px solid var(--color-primary-bg, #ccc);
+            color: #000;
+          }
+        }
+        > .LightTree-LightTreeNode-subContent,
+        > .LightTree-LightTreeNode-action {
+          display: none;
+        }
+      }
+    }
+
+    &.mute.select {
+      > .LightTree-LightTreeNode-inner {
+        color: @colorTextQuaternary;
+
+        > .LightTree-LightTreeNode-subContent {
+          color: @colorTextQuaternary;
+        }
+      }
+    }
+  }
+}

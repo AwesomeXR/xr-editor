@@ -1,0 +1,361 @@
+{
+  "name": "s79141h7cr681i",
+  "title": "新项目",
+  "scene": {
+    "list": [
+      {
+        "ID": "__start__",
+        "title": "场景1",
+        "flowNodes": [
+          {
+            "className": "SceneNode",
+            "ID": "jq3d11h01vsekk",
+            "name": "场景控制器_jq3d11h01vsekk",
+            "enabled": true,
+            "inputValues": {
+              "clearColor": [0.3250369625210763, 0.3250369625210763, 0.3250369625210763, 1],
+              "glowIntensity": 0.5,
+              "__edittimeData": {
+                "flowPos": {
+                  "x": 90,
+                  "y": 30
+                }
+              }
+            }
+          },
+          {
+            "className": "HDRNode",
+            "ID": "s8r3i1gupdjd9o",
+            "name": "HDR 光照",
+            "enabled": true,
+            "inputValues": {
+              "url": "https://rshop.tech/gw/exr/EnvMap_3.0-256.env",
+              "rotationY": 0,
+              "intensity": 1,
+              "__edittimeData": {
+                "flowPos": {
+                  "x": 90,
+                  "y": 210
+                }
+              }
+            }
+          },
+          {
+            "className": "ArcRotateCameraNode",
+            "ID": "3o9g71guprttlt",
+            "name": "默认轨道相机",
+            "enabled": true,
+            "inputValues": {
+              "allowControl": true,
+              "alpha": -52.620752865499504,
+              "beta": 74.95777113474392,
+              "radius": 10,
+              "fov": 0.8,
+              "target": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "__edittimeData": {
+                "flowPos": {
+                  "x": 350,
+                  "y": 130
+                }
+              }
+            }
+          },
+          {
+            "className": "SkyBoxNode",
+            "ID": "e99ot1h6vji9tu",
+            "name": "天空盒_e99ot1h6vji9tu",
+            "enabled": false,
+            "inputValues": {
+              "url": "https://rshop.tech/gw/assets/upload/202210281606560.png",
+              "flipY": true,
+              "__edittimeData": {
+                "flowPos": {
+                  "x": 350,
+                  "y": 30
+                }
+              }
+            }
+          },
+          {
+            "className": "FrameTimerNode",
+            "ID": "3pdgv1h7cri13s",
+            "name": "默认回放",
+            "enabled": true,
+            "inputValues": {
+              "range": {
+                "x": 0,
+                "y": 1
+              },
+              "shouldContinue": true,
+              "loop": true,
+              "speedRatio": 1,
+              "frame": 0,
+              "__edittimeData": {
+                "flowPos": {
+                  "x": -190,
+                  "y": 380
+                }
+              }
+            }
+          },
+          {
+            "className": "MovieClipNode",
+            "ID": "vdd9v1h7crnju0",
+            "name": "默认动画剪辑",
+            "enabled": true,
+            "inputValues": {
+              "activeKeys": [],
+              "config": {
+                "groups": []
+              },
+              "__edittimeData": {
+                "flowPos": {
+                  "x": 90,
+                  "y": 390
+                }
+              }
+            }
+          },
+          {
+            "className": "AssetContainerNode",
+            "ID": "6mra51h7crp63i",
+            "name": "模型_6mra51h7crp63i",
+            "enabled": true,
+            "inputValues": {
+              "url": "https://rshop.tech/gw/cube.glb",
+              "lodDistance": {
+                "x": 3,
+                "y": 20,
+                "z": 50
+              },
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "scaling": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              },
+              "rotation": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "visible": true,
+              "__edittimeData": {
+                "flowPos": {
+                  "x": -200,
+                  "y": 30
+                }
+              }
+            }
+          }
+        ],
+        "flowEdges": [
+          {
+            "ID": "udj591h7crns7c",
+            "from": {
+              "nodeID": "3pdgv1h7cri13s",
+              "ioKey": "frame"
+            },
+            "to": {
+              "nodeID": "vdd9v1h7crnju0",
+              "ioKey": "frame"
+            }
+          }
+        ],
+        "flowComponents": []
+      }
+    ]
+  },
+  "editor": {
+    "workbench": {
+      "wbConfigList": [
+        {
+          "layout": {
+            "type": "Split",
+            "key": "276pa1gvgr2l2v",
+            "ratio": 0.21057118964514257,
+            "direction": "horizontal",
+            "children": [
+              {
+                "type": "Component",
+                "key": "qr75f1h76t48nh",
+                "component": "ModelDesignOutline",
+                "query": {}
+              },
+              {
+                "type": "Split",
+                "key": "g6v3k1h76toi5b",
+                "ratio": 0.7479891324740068,
+                "direction": "horizontal",
+                "children": [
+                  {
+                    "type": "Component",
+                    "key": "8j2po1gvgr2l2v",
+                    "component": "CanvasViewer",
+                    "query": {}
+                  },
+                  {
+                    "type": "Component",
+                    "key": "u71is1h76toiac",
+                    "component": "ModelDesignProperty",
+                    "query": {}
+                  }
+                ]
+              }
+            ]
+          },
+          "title": "模型设计",
+          "key": "ModelDesign",
+          "hideHeaderWhenSingleComponent": true,
+          "hideHeaderWidget": true
+        },
+        {
+          "layout": {
+            "type": "Split",
+            "key": "92cbu1h7h2kn0a",
+            "ratio": 0.8,
+            "direction": "vertical",
+            "children": [
+              {
+                "type": "Component",
+                "key": "o42171h7h2mu91",
+                "component": "CanvasViewer",
+                "query": {}
+              },
+              {
+                "type": "Component",
+                "key": "us8g51h7h2kn25",
+                "component": "ModelDesignMovieClip",
+                "query": {
+                  "selectedIds": [],
+                  "expendedIds": [],
+                  "timelineScale": 1,
+                  "timelineOffset": 0
+                }
+              }
+            ]
+          },
+          "title": "动画编辑",
+          "key": "AnimationDesign",
+          "hideHeaderWidget": true
+        },
+        {
+          "layout": {
+            "type": "Split",
+            "key": "khlgm1gvgr2l2v",
+            "ratio": 0.4,
+            "direction": "horizontal",
+            "children": [
+              {
+                "type": "Component",
+                "key": "b85sd1gvgr2l2x",
+                "component": "CanvasViewer"
+              },
+              {
+                "type": "Component",
+                "key": "bmrv31gvgr2l2v",
+                "component": "FlowEditor",
+                "query": {
+                  "scale": {
+                    "sx": 1,
+                    "sy": 1
+                  },
+                  "translate": {
+                    "tx": 310.78848095634714,
+                    "ty": 115.12464319223787
+                  }
+                }
+              }
+            ]
+          },
+          "title": "逻辑编排",
+          "key": "LogicDesign",
+          "hideHeaderWidget": true
+        },
+        {
+          "layout": {
+            "type": "Split",
+            "key": "7arrr1gvgr2l2v",
+            "ratio": 0.7,
+            "direction": "horizontal",
+            "children": [
+              {
+                "type": "Component",
+                "key": "8j2po1gvgr2l2v",
+                "component": "CanvasViewer",
+                "query": {}
+              },
+              {
+                "type": "Component",
+                "key": "5vt871h7algj6a",
+                "component": "ExportPanel",
+                "query": {
+                  "mode": "H5"
+                }
+              }
+            ]
+          },
+          "title": "模型导出",
+          "key": "Export"
+        }
+      ],
+      "wbConfigIdx": 0,
+      "outline": {
+        "selectIds": ["FlowNode___start___6mra51h7crp63i"],
+        "expandIds": ["Scene___start___", "CameraGroup___start___", "FlowNodeGroup___start___"]
+      }
+    },
+    "scene": {
+      "__start__": {
+        "edittimeTargetCamera": {
+          "alpha": 47.77862149474582,
+          "beta": 68.0482665284783,
+          "radius": 20,
+          "target": [0, 0, 0]
+        },
+        "gizmo": {
+          "camera": {}
+        },
+        "cursor": {
+          "enabled": true,
+          "position": [0, 0, 0]
+        },
+        "gizState": {
+          "gizmoVisible": true,
+          "gizmoVisible_meshHighlight": true,
+          "gizmoVisible_transformGizmo": true,
+          "gizmoVisible_lightIndicator": true,
+          "gizmoVisible_lightFrustum": true,
+          "gizmoVisible_cameraIndicator": true,
+          "gizmoVisible_ground": true,
+          "gizmoVisible_cursor": true,
+          "gizmoVisible_relationLine": true,
+          "gizmoVisible_volume": true,
+          "gizmoVisible_locationIndicator": true
+        },
+        "modelDesign": {
+          "selectedIds": ["__AssetContainer/6mra51h7crp63i/Node/Cube"],
+          "expendedIds": [
+            "__AssetContainer",
+            "__AssetContainer/6mra51h7crp63i",
+            "__AssetContainer/6mra51h7crp63i/Node"
+          ],
+          "mode": "edit"
+        },
+        "viewport": {
+          "type": "auto"
+        }
+      }
+    },
+    "activeSceneID": "__start__",
+    "pbrComposers": []
+  }
+}

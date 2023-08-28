@@ -1,0 +1,78 @@
+.BizList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  color: @colorText;
+
+  &-item {
+    position: relative;
+    padding: 0 8px;
+    height: 24px;
+    border-radius: 4px;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    &.active {
+      background-color: @colorPrimaryActive;
+    }
+
+    &:hover {
+      background-color: @colorPrimary;
+    }
+
+    &.isLoading {
+      cursor: wait;
+      background-color: @colorPrimaryActive;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: @colorTextQuaternary;
+
+      &:hover,
+      &.active {
+        background: @colorBgElevated;
+      }
+    }
+
+    > .icon {
+      display: inline-block;
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      height: 24px;
+    }
+
+    > .title {
+      display: inline-block;
+      padding: 0 16px 0 20px;
+      // 超出部分省略号
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 24px;
+      line-height: 24px;
+    }
+
+    > .tail-icon {
+      display: inline-block;
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    > .children {
+      position: absolute;
+      top: 0;
+      left: calc(100% - 4px);
+    }
+  }
+}

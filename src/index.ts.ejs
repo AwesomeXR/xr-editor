@@ -1,0 +1,3 @@
+<% for (var js in htmlWebpackPlugin.files.js) { %>
+export * from '<%= htmlWebpackPlugin.files.js[js].replace(htmlWebpackPlugin.files.publicPath, '../dist/') %>';
+<% } %>
