@@ -9,7 +9,7 @@
   "module": "esm/index.js",
   "scripts": {
     "ci": "prettier --check src && tsc -p tsconfig.json --noEmit",
-    "prepublish": "npm run ci && npm run export:build && npm run export:deploy",
+    "release": "npm run ci && npm run export:build && npm run export:deploy && release-it",
     "gen:theme": "node ./gen-theme.js",
     "app:dev": "MODE=development webpack server -c webpack.app.config.js --stats-children",
     "export:emitType": "tsc -p tsconfig.build.json --emitDeclarationOnly --outDir esm",
@@ -71,6 +71,7 @@
     "process": "^0.11.10",
     "react-color": "^2.19.3",
     "react-router-dom": "^5.3.4",
+    "release-it": "^16.1.5",
     "string-replace-loader": "^3.1.0",
     "style-loader": "^3.3.3",
     "svg-react-loader": "^0.4.6",
