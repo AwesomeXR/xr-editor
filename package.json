@@ -20,7 +20,6 @@
     "@ant-design/cssinjs": "^1.17.0",
     "@ant-design/icons": "^5.2.5",
     "@antv/x6": "^2.13.1",
-    "@antv/x6-react-components": "^3.0.0",
     "@codemirror/autocomplete": "^6.9.0",
     "@codemirror/commands": "^6.2.5",
     "@codemirror/lang-javascript": "^6.2.1",
