@@ -1,6 +1,6 @@
 # XR Editor
 
-![workflow](https://github.com/ch-real3d/xr-editor/actions/workflows/ci.yml/badge.svg)
+![workflow](https://github.com/AwesomeXR/xr-editor/actions/workflows/ci.yml/badge.svg)
 
 ![](https://rshop.tech/gw/assets/upload/202308292230998.png)
 
@@ -19,10 +19,10 @@ npm install xr-editor
 ```jsx
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { IBuiltinWBKeyItem, XREditor, XRProjectModel, XRSetup, UserLevelEnum } from '@xr/editor';
+import { IBuiltinWBKeyItem, XREditor, XRProjectModel, XRSetup, UserLevelEnum } from 'xr-editor';
+import XRRuntimeStartupManifest from 'xr-editor/esm/XRRuntimeStartup.manifest.json';
 import { ExternalImpl, MemoryFS } from 'ah-memory-fs';
 import { IndexedDBAdapter } from 'ah-memory-fs-indexed-db';
-import XRRuntimeStartupManifest from '@xr/editor/esm/XRRuntimeStartup.manifest.json';
 
 ExternalImpl.ArrayBufferToString = data => new TextDecoder().decode(data);
 ExternalImpl.StringToArrayBuffer = data => new TextEncoder().encode(data);
@@ -54,9 +54,6 @@ export const EntryApp = () => {
 
     const _projModel = new XRProjectModel(mfs, XRRuntimeStartupManifest.js[0], _uploadDist);
     await _projModel.reload();
-
-    _projModel.setUserLevel(UserLevelEnum.Anonymous); // 游客模式
-    _projModel.setMetaInfo({ title: '本地项目' });
 
     projectRef.current = _projModel;
     setReady(true);
