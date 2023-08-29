@@ -1,6 +1,8 @@
 # XR Editor
 
 ![workflow](https://github.com/AwesomeXR/xr-editor/actions/workflows/ci.yml/badge.svg)
+![npm](https://img.shields.io/npm/dw/xr-editor)
+![npm](https://img.shields.io/npm/v/xr-editor)
 
 ![](https://rshop.tech/gw/assets/upload/202308292230998.png)
 ![](https://rshop.tech/gw/assets/upload/202308292258070.png)
@@ -12,6 +14,10 @@
 - 内建 H5、apng 导出功能
 
 ## 在项目中使用
+
+```bash
+npm install xr-editor
+```
 
 参见示例：[demo/page/XREdtiroPage.tsx](demo/page/XREdtiroPage.tsx)
 
