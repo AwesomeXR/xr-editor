@@ -23,3 +23,7 @@
 npm install
 npm run app:dev
 ```
+
+## 参与交流
+
+![image](https://github.com/AwesomeXR/xr-editor/assets/6647656/929c88b5-bd19-483e-b1cd-5db9dd219174)
